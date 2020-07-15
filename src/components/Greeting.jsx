@@ -7,10 +7,10 @@ function Greeting({name="John", excitement=1}){
     }
 
     return(
-    <>
-        <h3>Greetings  {name} {("!").repeat(excitement)}</h3>
-        <button onClick={greet}>Greet</button>
-    </>
+        <div style={{textAlign: "center"}}>
+            <h3>Greetings  {name} {("!").repeat(excitement)}</h3>
+            <button onClick={greet}>Greet</button>
+        </div>
     )
 }
 

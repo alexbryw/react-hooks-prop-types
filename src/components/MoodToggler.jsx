@@ -1,4 +1,5 @@
 import React, { useState} from 'react'
+import './MoodToggler.css'
 
 export default function MoodToggler(){
     const [isGoodMood, setIsGoodMood] = useState(true)
