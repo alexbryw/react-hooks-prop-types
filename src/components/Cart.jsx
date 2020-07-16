@@ -1,13 +1,26 @@
 import React, { useState } from 'react'
 import CartItem from './CartItem'
+import './Cart.css'
 
 export default function Cart({initialItems}){
     const [items, setItems] = useState(initialItems)
 
-    const updateQty = (id, qty) => {
-        const newItems = [...items]
-        const foundItem = newItems.find(item => item.id === id)
-        foundItem.qty = qty
+    // const updateQty = (id, qty) => {
+    //     const newItems = [...items]
+    //     const foundItem = newItems.find(item => item.id === id)
+    //     foundItem.qty = qty
+    //     setItems(newItems)
+    // }
+
+    const updateQty = (id, newQty) => {
+        const newItems = items.map(item => {
+            if(item.id === id){
+                console.log("ret item id " + item.id)
+                return {...item , qty:  newQty}
+            }
+            console.log(item.id)
+            return item
+        })
         setItems(newItems)
     }
 
@@ -17,13 +30,13 @@ export default function Cart({initialItems}){
 
     return (
     <div className="Cart">
-        <h3>Cart</h3>
+        <h2 className="Cart-Title">Shopping Cart</h2>
         <div className="Cart-Items">
             {items.map(item => (
                 <CartItem key={item.id} {...item} updateQty={updateQty}/>
             ))}
         </div>
-        <h3>Grand Total: ${grandTotal}</h3>
+        <h3 className="Cart-Total">Grand Total: ${grandTotal}</h3>
     </div>
     )
 }

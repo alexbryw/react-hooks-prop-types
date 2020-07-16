@@ -1,0 +1,15 @@
+.CartItem {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.CartItem div {
+    width: 25%;
+}
+
+.CartItem button {
+    height: 2rem;
+    width: 2rem;
+    border: none;
+}
