@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CartItem from './CartItem'
 import './Cart.css'
 
 export default function Cart({initialItems}){
-    const [items, setItems] = useState(initialItems)
+    const initialState = JSON.parse(window.localStorage.getItem('items'))
+    const [items, setItems] = useState(initialState || initialItems)
+    
+    useEffect(() => {
+        window.localStorage.setItem('items', JSON.stringify(items))
+    },[items])
 
     // const updateQty = (id, qty) => {
     //     const newItems = [...items]
