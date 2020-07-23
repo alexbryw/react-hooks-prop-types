@@ -5,6 +5,10 @@ import MoodToggler from './components/MoodToggler';
 import Cart from './components/Cart';
 import AddFiveCounter from './components/AddFiveCounter'
 import Name from './components/Name';
+import ItemList from './components/ItemList';
+import TitleCount from './components/TitleCount';
+import ShowMouseHook from './components/ShowMouseHook';
+import TimerHook from './components/TimerHook';
 // import './App.css';
 
 const items = [
@@ -17,6 +21,10 @@ function App() {
   return (
     <>
       <Cart initialItems={items}/>
+      <TimerHook />
+      <ShowMouseHook />
+      <TitleCount/>
+      <ItemList/>
       <Name />
       <Greeting name="Alex" excitement={4} />
       <Counter step={2} />

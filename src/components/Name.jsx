@@ -8,9 +8,9 @@ export default function Name(){
     return(
         <div className="Name">
             <h4>First name:</h4>
-            <input type="text" onChange={e => setName({...name ,firstName: e.target.value})} />
+            <input type="text" id="firstName" onChange={e => setName({...name ,firstName: e.target.value})} />
             <h4>Last name:</h4>
-            <input type="text" name="" id="" onChange={e => setName({...name, lastName: e.target.value})} />
+            <input type="text" name="" id="lastName" onChange={e => setName({...name, lastName: e.target.value})} />
             <h3>{JSON.stringify(name)}</h3>
         </div>
     )
