@@ -9,6 +9,7 @@ import ItemList from './components/ItemList';
 import TitleCount from './components/TitleCount';
 import ShowMouseHook from './components/ShowMouseHook';
 import TimerHook from './components/TimerHook';
+import DataFetch from './components/DataFetch';
 // import './App.css';
 
 const items = [
@@ -21,6 +22,7 @@ function App() {
   return (
     <>
       <Cart initialItems={items}/>
+      <DataFetch />
       <TimerHook />
       <ShowMouseHook />
       <TitleCount/>
