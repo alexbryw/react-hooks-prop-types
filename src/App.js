@@ -18,20 +18,24 @@ const items = [
   {id:3, name: "coffey", price: 5.006, qty: 4},
 ]
 
+export const UserContext = React.createContext()
+
 function App() {
   return (
     <>
-      <Cart initialItems={items}/>
-      <DataFetch />
-      <TimerHook />
-      <ShowMouseHook />
-      <TitleCount/>
-      <ItemList/>
-      <Name />
-      <Greeting name="Alex" excitement={4} />
-      <Counter step={2} />
-      <MoodToggler />
-      <AddFiveCounter />
+      <UserContext.Provider value={"alex"}>
+        <Cart initialItems={items}/>
+        <DataFetch />
+        <TimerHook />
+        <ShowMouseHook />
+        <TitleCount/>
+        <ItemList/>
+        <Name />
+        <Greeting name="Alex" excitement={4} />
+        <Counter step={2} />
+        <MoodToggler />
+        <AddFiveCounter />
+      </UserContext.Provider>
     </>
   );
 }
