@@ -10,6 +10,7 @@ import TitleCount from './components/TitleCount';
 import ShowMouseHook from './components/ShowMouseHook';
 import TimerHook from './components/TimerHook';
 import DataFetch from './components/DataFetch';
+import PropTypes from 'prop-types'
 // import './App.css';
 
 const items = [
@@ -31,7 +32,7 @@ function App() {
         <TitleCount/>
         <ItemList/>
         <Name />
-        <Greeting name="Alex" excitement={4} />
+        <Greeting name="Axel" excitement={4} greetInfo={greetInfo} />
         <Counter step={2} />
         <MoodToggler />
         <AddFiveCounter />
@@ -41,3 +42,17 @@ function App() {
 }
 
 export default App;
+
+Greeting.propTypes = {
+  name: PropTypes.string.isRequired,
+  excitement: PropTypes.number,
+  greetInfo: PropTypes.shape({
+    name: PropTypes.string,
+    excitement: PropTypes.number
+  })
+}
+
+const greetInfo = {
+  name: 'Roger',
+  excitement: 3
+}
