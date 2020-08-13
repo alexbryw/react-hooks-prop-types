@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import './DataFetch.scss'
 const axios = require('axios').default
 
 export default function DataFetch(){
@@ -20,7 +21,7 @@ export default function DataFetch(){
     },[currentPost])
 
     return(
-        <div>
+        <div className="DataFetchContainer">
             <h4>Post fetch: {currentPost}</h4>
             <button onClick={() => {setCurrentPost(currentPost + 1)}}>Next</button>
             {post ? <h4>{post.title}</h4> : undefined}
