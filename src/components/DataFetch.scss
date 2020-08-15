@@ -1,5 +1,17 @@
+@import './styles/variables';
+// @import './styles/buttonV1'; //all buttons change
 $MyColor: teal;
 
 .DataFetchContainer {
-    background-color: $MyColor;
+    // @extend button;
+    @include flexCenter(column);
+    flex-direction: column;
+    background-color: $secondaryColor;
+    button {
+        border: none;
+        border-radius: 0.3rem;
+        &:hover {
+            background-color: goldenrod;
+        }
+    }
 }
