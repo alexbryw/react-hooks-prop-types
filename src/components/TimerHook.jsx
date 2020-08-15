@@ -1,5 +1,6 @@
 import React,{ useState } from 'react'
 import { useEffect } from 'react'
+import styles from './TimerHook.module.scss'
 
 export default function TimerHook(){
     const [count, setCount] = useState(0)
@@ -19,7 +20,7 @@ export default function TimerHook(){
     
 
     return(
-        <div>
+        <div className={styles.TimerHook}>
             <h4>
                 Timer sec: {count}
             </h4>
