@@ -1,0 +1,9 @@
+$timerColor: lightblue;
+
+.TimerHook{
+    background-color: $timerColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black
+}
